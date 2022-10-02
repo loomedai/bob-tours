@@ -1,0 +1,7 @@
+{
+  "name": "bob-tours",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

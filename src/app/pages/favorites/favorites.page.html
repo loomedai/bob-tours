@@ -9,6 +9,14 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let tour of tours"
+              [routerLink]="['/details', tour]"
+              routerDirection="forward">
+            {{ tour.Title}}
+            </ion-item>
+  </ion-list>
+
   <ion-button routerLink="/details"
   routerDirection="forward">
   Show details

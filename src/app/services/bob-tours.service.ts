@@ -6,10 +6,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class BobToursService {
 
+  public regions: any;
+
   baseUrl = 'https://bob-tours-c242a-default-rtdb.europe-west1.firebasedatabase.app/';
 
-
   constructor(private http:HttpClient) { }
+
+  initialize() {
+    this.getRegions()
+    .then(data => this.regions = data);
+  }
 
   getRegions(){
     let requestUrl = `${this.baseUrl}/Regions.json`;

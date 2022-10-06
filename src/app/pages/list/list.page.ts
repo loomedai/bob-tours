@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BobToursService } from 'src/app/services/bob-tours.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
-  constructor() { }
+  tours: any;
+
+  constructor(private btService: BobToursService) { }
 
   ngOnInit() {
+    this.tours = this.btService.tours;
   }
 
 }

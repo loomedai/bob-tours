@@ -8,5 +8,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let region of regions">
+      {{region.Name}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

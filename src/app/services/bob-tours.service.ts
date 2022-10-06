@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class BobToursService {
     this.getRegions()
     .then(data => this.regions = data);
     this.getTourtypes()
-    .then(data  => this.tourtypes = data);
+    .then(data  => this.tourtypes = _.sortBy(data, 'Name'));
   }
 
   getRegions(){

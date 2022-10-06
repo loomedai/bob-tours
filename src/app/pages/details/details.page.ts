@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  tour = null;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.activatedRoute);
+    this.tour = this.activatedRoute.snapshot.params;
   }
 
 }

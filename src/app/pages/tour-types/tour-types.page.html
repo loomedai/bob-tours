@@ -9,7 +9,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let tourtype of tourtypes">
+    <ion-item *ngFor="let tourtype of tourtypes"
+    [routerLink]="['/list'
+    {Category: 'Tourtype',
+    Criteria: tourtype.ID,
+    Name:tourtype.Name}]"
+    routerDirection="forward">
       {{tourtype.Name}}
     </ion-item>    
   </ion-list>

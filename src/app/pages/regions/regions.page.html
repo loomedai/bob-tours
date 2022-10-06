@@ -10,7 +10,8 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let region of regions"
-      [routerLink]="['/list']" 
+      [routerLink]="['/list',
+      {Category: 'Region', Criteria: region.ID, Name: region.Name}]" 
       routerDirection="forward">
       {{region.Name}}
     </ion-item>

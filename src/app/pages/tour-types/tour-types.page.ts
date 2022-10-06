@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BobToursService } from 'src/app/services/bob-tours.service';
 
 @Component({
   selector: 'app-tour-types',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TourTypesPage implements OnInit {
 
-  constructor() { }
+  tourtypes: any;
+
+  constructor( private btService:BobToursService) { }
 
   ngOnInit() {
+    this.tourtypes = this. btService.tourtypes
   }
 
 }
